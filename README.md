@@ -6,7 +6,7 @@ with an annotation containing a SQL. The parameters in the SQL are provided by t
 
   In this way, one query needs one SQL, which means one query needs one method. Thus, many queries from a table may need
 many methods. However, expect some parameters, these methods are almost duplicated. For example, we sometimes query a
-table by name, while sometimes by age. To salve this problem, Mybatis provides a `Provider` class which can handle ambiguous
+table by name, while sometimes by age. To solve this problem, Mybatis provides a `Provider` class which can handle ambiguous
 parameters contained in the pojo/entity that corresponding to the table queried. But some entities/pojos may have many
 fields as the tables, it courses the Provider class very long and hard to maintain.
 
