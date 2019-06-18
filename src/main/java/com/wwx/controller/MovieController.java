@@ -43,12 +43,12 @@ public class MovieController {
 
     @RequestMapping("change")
     public int change() throws ParseException {
-        Movie movieS = new Movie();
-        movieS.setStartTime(new Date());
-        movieS.setLasts(105L);
-        Movie movieC = new Movie();
-        movieC.setName("teen");
-        return movieService.changeMovie(movieS, movieC);
+        Movie movieSets = new Movie();
+        movieSets.setStartTime(new Date());
+        movieSets.setLasts(105L);
+        Movie movieConditions = new Movie();
+        movieConditions.setName("teen");
+        return movieService.changeMovie(movieSets, movieConditions);
     }
 
     @RequestMapping("remove")

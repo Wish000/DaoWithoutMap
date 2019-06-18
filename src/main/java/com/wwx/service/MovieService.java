@@ -20,8 +20,7 @@ public class MovieService {
      * @return 电影结果集
      */
     public List<Movie> queryMovies(Movie movie) {
-//        List<Movie> movies = movieDao.SELECT(movie);
-        List<Movie> movies = movieDao.selectByLastsLimits(movie);
+        List<Movie> movies = movieDao.SELECT(movie);
         return movies;
     }
 
