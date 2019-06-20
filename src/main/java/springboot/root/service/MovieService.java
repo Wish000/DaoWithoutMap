@@ -1,7 +1,7 @@
-package com.wwx.service;
+package springboot.root.service;
 
-import com.wwx.dao.MovieDao;
-import com.wwx.entity.Movie;
+import springboot.root.dao.MovieDao;
+import springboot.root.entity.Movie;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

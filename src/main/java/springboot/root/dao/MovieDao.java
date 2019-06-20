@@ -1,10 +1,11 @@
-package com.wwx.dao;
+package springboot.root.dao;
 
+import com.wwx.compiler.Dao;
 import com.wwx.compiler.annotation.AutoSelect;
 import com.wwx.compiler.annotation.AutoUpdate;
 import com.wwx.compiler.annotation.DaoProxy;
-import com.wwx.config.MySQLDataSourceConfig;
-import com.wwx.entity.Movie;
+import springboot.root.config.MySQLDataSourceConfig;
+import springboot.root.entity.Movie;
 
 import java.util.List;
 

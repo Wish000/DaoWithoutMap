@@ -1,7 +1,7 @@
-package com.wwx.controller;
+package springboot.root.controller;
 
-import com.wwx.entity.Movie;
-import com.wwx.service.MovieService;
+import springboot.root.entity.Movie;
+import springboot.root.service.MovieService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

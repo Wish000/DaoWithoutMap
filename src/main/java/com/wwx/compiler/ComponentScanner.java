@@ -15,7 +15,7 @@ class ComponentScanner {
 
     private String buildClassPath;
 
-    public ComponentScanner(String buildClassPath) {
+    ComponentScanner(String buildClassPath) {
         this.buildClassPath = buildClassPath.replace('.', '\\');
     }
     private static final Pattern INNER_PATTERN =

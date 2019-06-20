@@ -1,6 +1,5 @@
-package com.wwx.entity;
+package springboot.root.entity;
 
-import com.wwx.compiler.annotation.SQLDatePattern;
 import com.wwx.compiler.annotation.Table;
 import com.wwx.compiler.annotation.sql.ID;
 

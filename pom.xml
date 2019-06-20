@@ -19,9 +19,20 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <!-- JDK_HOME -->
+        <jdk.home>C:/Program Files/Java/jdk1.8.0_66</jdk.home>
     </properties>
 
     <dependencies>
+        <!-- 避免警告 NoClassDefFoundError: com/sun/tools/javac/processing/JavacProcessingEnvironment -->
+        <dependency>
+            <groupId>jdk</groupId>
+            <artifactId>tools</artifactId>
+            <version>${java.version}</version>
+            <scope>system</scope>
+            <systemPath>${jdk.home}/lib/tools.jar</systemPath>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -70,11 +81,11 @@
         </dependency>
 
 
-        <dependency>
+        <!--<dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>0.10.1</version>
-        </dependency>
+        </dependency>-->
 
     </dependencies>
 

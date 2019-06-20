@@ -2,6 +2,7 @@ package com.wwx.compiler;
 
 
 import com.wwx.compiler.annotation.DaoProxy;
+import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -19,7 +20,7 @@ import static com.wwx.compiler.DaoCodeBuilder.IMPL;
 import static com.wwx.compiler.DaoCodeBuilder.MAPPER;
 
 public class DaoFactory {
-    public static String idaoPkg;
+    static String idaoPkg;
     private static final String CLASS_ROOT_PATH = DaoFactory.class.getClassLoader().getResource("").getPath();
     private static final int THREADS_NUM = 4;
     static boolean hasException;
@@ -33,7 +34,7 @@ public class DaoFactory {
         createDaoImpls(daoPkg, buildClassPath);
     }
 
-    public static void createDaoImpls(String daoPkg, String buildClassPath) {
+    private static void createDaoImpls(String daoPkg, String buildClassPath) {
         idaoPkg = daoPkg;
         long timeStart = System.currentTimeMillis();
 
@@ -146,7 +147,7 @@ public class DaoFactory {
 
     private static class CaughtThreadFactory implements ThreadFactory {
         @Override
-        public Thread newThread(Runnable r) {
+        public Thread newThread(@NotNull Runnable r) {
             Thread t = new Thread(r);
             t.setUncaughtExceptionHandler((thread, throwable) -> {
                 throwable.printStackTrace();

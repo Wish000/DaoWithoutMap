@@ -1,4 +1,4 @@
-package com.wwx.config;
+package springboot.root.config;
 
 import org.apache.ibatis.datasource.pooled.PooledDataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
-import static com.wwx.config.MySQLDataSourceConfig.PACKAGE;
+import static springboot.root.config.MySQLDataSourceConfig.PACKAGE;
 
 @Configuration
 @MapperScan(basePackages = PACKAGE, sqlSessionFactoryRef = "mysqlSqlSessionFactory")

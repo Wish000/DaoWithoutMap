@@ -6,7 +6,6 @@ import com.wwx.compiler.exception.DynamicCompileException;
 import com.wwx.compiler.exception.IDaoMethodArgumentException;
 import com.wwx.compiler.exception.IDaoTypeParamException;
 import com.wwx.compiler.util.StringUtils;
-import com.wwx.dao.Dao;
 
 import javax.validation.constraints.NotNull;
 import java.lang.annotation.Annotation;
@@ -28,9 +27,9 @@ import static com.wwx.compiler.DaoFactory.idaoPkg;
  * 其中provider代码中有用到bean信息
  * 所以，这个类中需要封装dao接口类对象、dao的须代理方法对象与之注解组的映射、bean的类对象
  */
-public class DaoCodeBuilder {
-    public static final String IMPL = "Impl";
-    public static final String MAPPER = "Mapper";
+class DaoCodeBuilder {
+    static final String IMPL = "Impl";
+    static final String MAPPER = "Mapper";
     private static final String PREFIX = "Proxy";
     private static final String PROVIDER = "Provider";
     /**
@@ -70,7 +69,7 @@ public class DaoCodeBuilder {
      */
     private List<ProviderMethodCodeCache> providerMethodCodes = new ArrayList<>(4);
 
-    public DaoCodeBuilder(Class iDao) {
+    DaoCodeBuilder(Class iDao) {
         definedAnnotationList = new ArrayList<>(5);
         definedAnnotationList.add(AutoSelect.class);
         definedAnnotationList.add(AutoUpdate.class);
@@ -87,7 +86,7 @@ public class DaoCodeBuilder {
      *
      * @return 三个类的代码map
      */
-    public Map<String, Map<String, String>> buildCode() {
+    Map<String, Map<String, String>> buildCode() {
         createMethodsCode();
         Map<String, Map<String, String>> codeMap = new HashMap<>(3);
         Map<String, String> implCode = buildImplCode();
