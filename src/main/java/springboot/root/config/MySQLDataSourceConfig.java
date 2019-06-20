@@ -16,7 +16,7 @@ import static springboot.root.config.MySQLDataSourceConfig.PACKAGE;
 @Configuration
 @MapperScan(basePackages = PACKAGE, sqlSessionFactoryRef = "mysqlSqlSessionFactory")
 public class MySQLDataSourceConfig {
-    public static final String PACKAGE = "com.wwx.mapper";
+    public static final String PACKAGE = "springboot.root.mapper";
 
     @Value("${mysql.driverClass}")
     private String driverClass;
